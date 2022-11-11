@@ -4,12 +4,14 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D) ,typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private Collider2D _feetCollider;
+    [SerializeField] private Collider2D _bodyCollider;
+    
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _climbSpeed;
     [SerializeField] private float _jumpForce;
 
     private Rigidbody2D _rigidbody2D;
-    private Collider2D _collider2D;
     private Animator _animator;
 
     private Vector2 _moveInput;
@@ -22,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake() 
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _collider2D = GetComponent<Collider2D>();
         _animator = GetComponent<Animator>();
     }
 
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         LayerMask groundLayer = LayerMask.GetMask("Ground");
-        if (!_collider2D.IsTouchingLayers(groundLayer))
+        if (!_feetCollider.IsTouchingLayers(groundLayer))
             return;
 
         _rigidbody2D.velocity += new Vector2(0f, _jumpForce);
@@ -66,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     private void Climb()
     {
         LayerMask climbLayer = LayerMask.GetMask("Climbing");
-        if (!_collider2D.IsTouchingLayers(climbLayer))
+        if (!_bodyCollider.IsTouchingLayers(climbLayer))
         {
             _rigidbody2D.gravityScale = _defaultGravity;
             _animator.SetBool("isClimbing", false);
