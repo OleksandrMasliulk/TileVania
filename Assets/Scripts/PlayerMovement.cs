@@ -69,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
         if (!_collider2D.IsTouchingLayers(climbLayer))
         {
             _rigidbody2D.gravityScale = _defaultGravity;
+            _animator.SetBool("isClimbing", false);
             return;
         }
 
@@ -76,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 newVelocity = new Vector2(_rigidbody2D.velocity.x, _moveInput.y * _climbSpeed);
         _rigidbody2D.velocity = newVelocity;
 
-        //_animator.SetBool("isClimbing", _isMovingVertically);
+        _animator.SetBool("isClimbing", _isMovingVertically);
     }
 
     private void OnMove(InputValue value) => _moveInput = value.Get<Vector2>();
