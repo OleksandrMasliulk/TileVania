@@ -35,14 +35,3 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: VC_Climbing
-    m_To: VC_Follow Player
-    m_Blend:
-      m_Style: 1
-      m_Time: 20
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
