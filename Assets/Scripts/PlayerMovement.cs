@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
+    [SerializeField] private float _climbSpeed;
     [SerializeField] private float _jumpForce;
 
     private Rigidbody2D _rigidbody2D;
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 _moveInput;
     private bool _isMovingHorizontally => Mathf.Abs(_rigidbody2D.velocity.x) > Mathf.Epsilon;
+    private bool _isMovingVertically => Mathf.Abs(_rigidbody2D.velocity.y) > Mathf.Epsilon;
 
     private void Awake() 
     {
@@ -23,7 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update() 
     {
-        Move();    
+        Move();
+        Climb();    
         FlipSprite();
     }
 
@@ -50,6 +53,18 @@ public class PlayerMovement : MonoBehaviour
             return;
 
         transform.localScale = new Vector2(Mathf.Sign(_rigidbody2D.velocity.x), 1f);
+    }
+
+    private void Climb()
+    {
+        LayerMask climbLayer = LayerMask.GetMask("Climbing");
+        if (!_collider2D.IsTouchingLayers(climbLayer))
+            return;
+
+        Vector2 newVelocity = new Vector2(_rigidbody2D.velocity.x, _moveInput.y * _climbSpeed);
+        _rigidbody2D.velocity = newVelocity;
+
+        //_animator.SetBool("isClimbing", _isMovingVertically);
     }
 
     private void OnMove(InputValue value) => _moveInput = value.Get<Vector2>();
