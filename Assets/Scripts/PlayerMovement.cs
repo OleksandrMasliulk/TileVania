@@ -16,11 +16,19 @@ public class PlayerMovement : MonoBehaviour
     private bool _isMovingHorizontally => Mathf.Abs(_rigidbody2D.velocity.x) > Mathf.Epsilon;
     private bool _isMovingVertically => Mathf.Abs(_rigidbody2D.velocity.y) > Mathf.Epsilon;
 
+    private float _climbGravity = 0f;
+    private float _defaultGravity;
+
     private void Awake() 
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _collider2D = GetComponent<Collider2D>();
         _animator = GetComponent<Animator>();
+    }
+
+    private void Start() 
+    {
+        _defaultGravity = _rigidbody2D.gravityScale;    
     }
 
     private void Update() 
@@ -59,8 +67,12 @@ public class PlayerMovement : MonoBehaviour
     {
         LayerMask climbLayer = LayerMask.GetMask("Climbing");
         if (!_collider2D.IsTouchingLayers(climbLayer))
+        {
+            _rigidbody2D.gravityScale = _defaultGravity;
             return;
+        }
 
+        _rigidbody2D.gravityScale = _climbGravity;
         Vector2 newVelocity = new Vector2(_rigidbody2D.velocity.x, _moveInput.y * _climbSpeed);
         _rigidbody2D.velocity = newVelocity;
 
