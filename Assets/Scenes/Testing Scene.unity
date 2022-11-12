@@ -8106,6 +8106,8 @@ MonoBehaviour:
     m_ParentHash: 756556552
   - m_Hash: -1658296173
     m_ParentHash: 756556552
+  - m_Hash: 327726178
+    m_ParentHash: 756556552
 --- !u!1001 &4260052771408483824
 PrefabInstance:
   m_ObjectHideFlags: 0
