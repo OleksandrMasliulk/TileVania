@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Hazards"))
         {
             Die();
         }
@@ -26,6 +26,15 @@ public class Player : MonoBehaviour
     {
         _isAlive = false;
         _animator.SetTrigger("Dying");
-        gameObject.layer = 0;
+        SetPlayerLayer(0);
+    }
+
+    private void SetPlayerLayer(int layer) 
+    {
+        Transform[] children = transform.GetComponentsInChildren<Transform>();
+        foreach(Transform child in children)
+        {
+            child.gameObject.layer = layer;
+        }
     }
 }
