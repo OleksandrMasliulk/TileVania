@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D) ,typeof(Animator))]
+[RequireComponent(typeof(Player), typeof(Rigidbody2D), typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Collider2D _feetCollider;
@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _climbSpeed;
     [SerializeField] private float _jumpForce;
 
+    private Player _player;
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
 
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake() 
     {
+        _player = GetComponent<Player>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }
@@ -34,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update() 
     {
+        if (!_player.IsAlive)
+            return;
+
         Move();
         Climb();    
         FlipSprite();
@@ -49,6 +54,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        if (!_player.IsAlive)
+            return;
+
         LayerMask groundLayer = LayerMask.GetMask("Ground");
         if (!_feetCollider.IsTouchingLayers(groundLayer))
             return;
