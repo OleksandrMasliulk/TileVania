@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
+  - Hazards
   layers:
   - Default
   - TransparentFX
@@ -18,7 +18,7 @@ TagManager:
   - Player
   - Bouncy
   - Enemies
-  - 
+  - Hazards
   - 
   - 
   - 
@@ -51,6 +51,12 @@ TagManager:
   - name: Platforms
     uniqueID: 62412407
     locked: 0
-  - name: Characters
+  - name: Hazards
+    uniqueID: 3381336465
+    locked: 0
+  - name: Enemies
+    uniqueID: 587113099
+    locked: 0
+  - name: Player
     uniqueID: 1777803939
     locked: 0

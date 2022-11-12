@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 957366290808305580}
   m_Layer: 11
   m_Name: Enemy_Scorpion
-  m_TagString: Enemy
+  m_TagString: Hazards
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,8 +133,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1777803939
-  m_SortingLayer: 4
+  m_SortingLayerID: 587113099
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 479c3cf2957c1e44c9a43a219f1039a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
