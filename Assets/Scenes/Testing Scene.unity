@@ -8435,11 +8435,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6228772971650420416, guid: db1cecfcb4c22ea4dacc88393554154b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6228772971650420416, guid: db1cecfcb4c22ea4dacc88393554154b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 6228772971650420416, guid: db1cecfcb4c22ea4dacc88393554154b, type: 3}
       propertyPath: m_LocalPosition.z
