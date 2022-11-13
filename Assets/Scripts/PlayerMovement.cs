@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator _animator;
 
     private Vector2 _moveInput;
-    private bool _isMovingHorizontally => Mathf.Abs(_rigidbody2D.velocity.x) > Mathf.Epsilon;
-    private bool _isMovingVertically => Mathf.Abs(_rigidbody2D.velocity.y) > Mathf.Epsilon;
+    private bool _isMovingHorizontally => Mathf.Abs(_moveInput.x) > Mathf.Epsilon;
+    private bool _isMovingVertically => Mathf.Abs(_moveInput.y) > Mathf.Epsilon;
 
     private float _climbGravity = 0f;
     private float _defaultGravity;
@@ -39,9 +39,19 @@ public class PlayerMovement : MonoBehaviour
         if (!_player.IsAlive)
             return;
 
-        Move();
-        Climb();    
         FlipSprite();
+        // Move();
+        // Climb();
+    }
+
+    private void FixedUpdate()
+    {
+        if (!_player.IsAlive)
+            return;
+
+        // FlipSprite();
+        Move();
+        Climb(); 
     }
 
     private void Move()
@@ -69,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         if (!_isMovingHorizontally)
             return;
 
-        transform.localScale = new Vector2(Mathf.Sign(_rigidbody2D.velocity.x), 1f);
+        transform.localScale = new Vector2(Mathf.Sign(_moveInput.x), 1f);
     }
 
     private void Climb()

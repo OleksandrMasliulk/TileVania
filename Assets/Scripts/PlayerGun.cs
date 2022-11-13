@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerGun : MonoBehaviour
 {
     [SerializeField] private Transform _projectileSpawnPoint;
-    [SerializeField] private GameObject _projectile;
+    [SerializeField] private Projectile _projectile;
 
     private Player _player;
 
@@ -19,7 +19,8 @@ public class PlayerGun : MonoBehaviour
         if (!_player.IsAlive)
             return;
 
-        GameObject newProjectile = Instantiate(_projectile, _projectileSpawnPoint.position, Quaternion.identity);
+        Projectile newProjectile = Instantiate(_projectile, _projectileSpawnPoint.position, Quaternion.identity);
+        newProjectile.Construct(this.transform);
     }
 
     private void OnFire(InputValue value)

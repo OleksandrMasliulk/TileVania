@@ -23,12 +23,16 @@ public class EnemyMovement : MonoBehaviour
     private void Update()
     {
         CheckWalls();
+    }
+
+    private void FixedUpdate() 
+    {
         Move();
     }
 
     private void Move()
     {
-        _rigidbody2D.velocity = new Vector2((int)_moveDirection * _movementSpeed * Time.deltaTime, _rigidbody2D.velocity.y);
+        _rigidbody2D.velocity = new Vector2((int)_moveDirection * _movementSpeed, _rigidbody2D.velocity.y);
     }
 
     private void SwapDirection()

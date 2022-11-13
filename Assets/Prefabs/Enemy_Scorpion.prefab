@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5794384841037695303}
   m_Layer: 11
   m_Name: WallCheck
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,10 +71,11 @@ GameObject:
   - component: {fileID: 6371157116644381031}
   - component: {fileID: 7028631527120698840}
   - component: {fileID: 6743379368498713331}
+  - component: {fileID: 8604612393881652046}
   - component: {fileID: 957366290808305580}
   m_Layer: 11
   m_Name: Enemy_Scorpion
-  m_TagString: Hazards
+  m_TagString: Enemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,6 +222,18 @@ PolygonCollider2D:
       - {x: 0.15270352, y: -0.0035464764}
       - {x: 0.18971097, y: 0.11857486}
       - {x: 0.18971086, y: 0.34950745}
+--- !u!114 &8604612393881652046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8739805955672433035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1e79d8cf082c1448a74a0a2b156a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &957366290808305580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,5 +246,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5519c91677f4bf14f8afd63842a49131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 80
+  _movementSpeed: 1
   _wallCheckCollider: {fileID: 5794384841037695303}
