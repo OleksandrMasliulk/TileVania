@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3435183226531983459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 97311268426889812}
+  m_Layer: 0
+  m_Name: Fireball Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &97311268426889812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435183226531983459}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.286, y: -0.239, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7545800934015132952}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5546116743285716728
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,8 +103,9 @@ GameObject:
   - component: {fileID: 3862921795727283771}
   - component: {fileID: 3097901310752067904}
   - component: {fileID: 4983218539499885393}
-  - component: {fileID: 8909510890212681461}
   - component: {fileID: 4289425134249346149}
+  - component: {fileID: 8909510890212681461}
+  - component: {fileID: 7872655213003776731}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -94,6 +126,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2810184271964628581}
+  - {fileID: 97311268426889812}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -136,7 +169,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1777803939
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 390848671, guid: ccf9428c8769cc449b1c57d1f61a3d53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -246,6 +279,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &4289425134249346149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7545800934015132957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 786ce646806606544a4b553071c98f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8909510890212681461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +308,7 @@ MonoBehaviour:
   _moveSpeed: 7
   _climbSpeed: 3
   _jumpForce: 22
---- !u!114 &4289425134249346149
+--- !u!114 &7872655213003776731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,6 +317,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7545800934015132957}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 786ce646806606544a4b553071c98f3d, type: 3}
+  m_Script: {fileID: 11500000, guid: ab945934b6f8d7e4286eecd0a4953b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _projectileSpawnPoint: {fileID: 97311268426889812}
+  _projectile: {fileID: 8431472499656373533, guid: 97986a81d8e26bb43b3eac8f4139a1d2, type: 3}
