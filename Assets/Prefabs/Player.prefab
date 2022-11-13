@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 7872655213003776731}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -321,4 +321,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileSpawnPoint: {fileID: 97311268426889812}
-  _projectile: {fileID: 8431472499656373533, guid: 97986a81d8e26bb43b3eac8f4139a1d2, type: 3}
+  _projectile: {fileID: 7394186120907187258, guid: 97986a81d8e26bb43b3eac8f4139a1d2, type: 3}
