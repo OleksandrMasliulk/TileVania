@@ -51,7 +51,7 @@ public class EnemyMovement : MonoBehaviour
     private void CheckWalls()
     {
         LayerMask wallLayer = LayerMask.GetMask("Ground");
-        if (_wallCheckCollider.IsTouchingLayers(wallLayer))
+        if (!_wallCheckCollider.IsTouchingLayers(wallLayer))
         {
             SwapDirection();
         }
