@@ -19,6 +19,7 @@ public class LevelExit : MonoBehaviour
     {
         yield return new WaitForSeconds(_loadDelay);
 
+        ScenePersist.Instance.ResetScenePersist();
         SceneManager.LoadScene(_nextLevelIndex);
     }
 
