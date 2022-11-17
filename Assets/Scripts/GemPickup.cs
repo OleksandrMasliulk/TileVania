@@ -19,6 +19,7 @@ public class GemPickup : MonoBehaviour
         if (_wasCollected)
             return;
 
+        _wasCollected = true;
         GameSession.Instance.AddScore(_scoreValue);
         AudioSource.PlayClipAtPoint(_pickUpSfx, Camera.main.transform.position, .1f);
         Destroy(this.gameObject);
