@@ -7,7 +7,6 @@ public class LevelExit : MonoBehaviour
     [SerializeField] private int _nextLevelIndex;
     [SerializeField] private float _loadDelay;
 
-
     private void LoadNextLevel()
     {
         if (_nextLevelIndex > SceneManager.sceneCountInBuildSettings || _nextLevelIndex < 0)

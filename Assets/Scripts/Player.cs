@@ -22,9 +22,14 @@ public class Player : MonoBehaviour
 
     private void Die() 
     {
+        if (!_isAlive)
+            return;
+
         _isAlive = false;
         _animator.SetTrigger("Dying");
         SetPlayerLayer(0);
+
+        GameSession.Instance.ProcessPlayerDeath();
     }
 
     private void SetPlayerLayer(int layer) 
