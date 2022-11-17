@@ -26,8 +26,6 @@ public class PlayerGun : MonoBehaviour
     private void OnFire(InputValue value)
     {
         if (value.isPressed)
-        {
             Shoot();
-        }
     }
 }

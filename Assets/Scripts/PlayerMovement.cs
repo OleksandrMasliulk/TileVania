@@ -40,8 +40,6 @@ public class PlayerMovement : MonoBehaviour
             return;
 
         FlipSprite();
-        // Move();
-        // Climb();
     }
 
     private void FixedUpdate()
@@ -49,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
         if (!_player.IsAlive)
             return;
 
-        // FlipSprite();
         Move();
         Climb(); 
     }
@@ -103,8 +100,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnJump(InputValue value) 
     {
         if (value.isPressed)
-        {
             Jump();
-        }
     }
 }
