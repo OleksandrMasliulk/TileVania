@@ -39,15 +39,21 @@ public class EnemyMovement : MonoBehaviour
     {
         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         if (_moveDirection == MoveDirection.Left)
+        {
             _moveDirection = MoveDirection.Right;
+        }
         else
+        {
             _moveDirection = MoveDirection.Left;
+        }
     }
 
     private void CheckWalls()
     {
         LayerMask wallLayer = LayerMask.GetMask("Ground");
         if (!_wallCheckCollider.IsTouchingLayers(wallLayer))
+        {
             SwapDirection();
+        }
     }
 }

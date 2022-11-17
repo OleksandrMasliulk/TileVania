@@ -17,19 +17,16 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) 
     {
         if (other.gameObject.CompareTag("Hazards") || other.gameObject.CompareTag("Enemy"))
+        {
             Die();
+        }
     }
 
     private void Die() 
     {
-        if (!_isAlive)
-            return;
-
         _isAlive = false;
         _animator.SetTrigger("Dying");
         SetPlayerLayer(0);
-
-        GameSession.Instance.ProcessPlayerDeath();
     }
 
     private void SetPlayerLayer(int layer) 

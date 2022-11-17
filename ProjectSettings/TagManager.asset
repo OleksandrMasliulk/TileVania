@@ -21,7 +21,7 @@ TagManager:
   - Enemies
   - Hazards
   - Projectiles
-  - Interractables
+  - 
   - 
   - 
   - 
@@ -54,9 +54,6 @@ TagManager:
     locked: 0
   - name: Hazards
     uniqueID: 3381336465
-    locked: 0
-  - name: Interractables
-    uniqueID: 917217163
     locked: 0
   - name: Enemies
     uniqueID: 587113099
